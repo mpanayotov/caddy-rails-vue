@@ -33,7 +33,7 @@ export default {
   },
 
   created() {
-    axios.get('/todos', { baseURL: 'https://api.localhost:3000' })
+    axios.get('/todos', { baseURL: 'https://api.localhost' })
       .then(response => {
         this.todos = response.data
       });
@@ -43,7 +43,7 @@ export default {
     addTodo() {
       axios.post('/todos',
         { description: this.new_todo_description  },
-        { baseURL: 'https://api.localhost:3000' })
+        { baseURL: 'https://api.localhost' })
         .then(response => {
           this.todos.push(response.data);
           this.new_todo_description = null;
